@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "gen/v1";
+
+service TunnelService {
+  rpc PostTweet (PostTweetRequest) returns (PostTweetResponse);
+}
+
+message PostTweetRequest {
+  bytes image = 1;
+}
+
+message PostTweetResponse {
+  string response = 1;
+}
