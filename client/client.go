@@ -21,10 +21,10 @@ func (t *Twitter) UploadMedia(b64media []byte) (string, error) {
 	return media.MediaIDString, nil
 }
 
-func (t *Twitter) PostMediaTweet(mediaID string) error {
+func (t *Twitter) PostMediaTweet(mediaID, message string) error {
 	v := url.Values{}
 	v.Set("media_ids", mediaID)
-	_, err := t.Client.PostTweet("", v)
+	_, err := t.Client.PostTweet(message, v)
 	return err
 }
 

@@ -18,7 +18,7 @@ func (s *Service) PostTweet(ctx context.Context, request *pb.PostTweetRequest) (
 		return &pb.PostTweetResponse{}, err
 	}
 
-	err = s.twitter.PostMediaTweet(mediaID)
+	err = s.twitter.PostMediaTweet(mediaID, request.Message)
 
 	if err != nil {
 		return &pb.PostTweetResponse{}, err

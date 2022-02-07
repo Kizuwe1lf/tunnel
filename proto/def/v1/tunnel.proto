@@ -1,5 +1,6 @@
 syntax = "proto3";
 
+package TunnelService;
 option go_package = "gen/v1";
 
 service TunnelService {
@@ -8,6 +9,7 @@ service TunnelService {
 
 message PostTweetRequest {
   bytes image = 1;
+  string message = 2;
 }
 
 message PostTweetResponse {
